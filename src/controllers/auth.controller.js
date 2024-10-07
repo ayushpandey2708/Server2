@@ -8,6 +8,11 @@ const {
 } = require('../services');
 const { verifyToken } = require('../utils/auth');
 
+const home = catchAsync(async (req, res) => {
+	console.log("diei")
+	res.status(httpStatus.CREATED).send("pandey");
+});
+
 const register = catchAsync(async (req, res) => {
 	const user = await userService.createUser(req);
 	const tokens = await tokenService.generateAuthTokens({
@@ -46,6 +51,7 @@ const resetPassword = catchAsync(async (req, res) => {
 });
 
 module.exports = {
+	home,
 	register,
 	login,
 	forgotPassword,

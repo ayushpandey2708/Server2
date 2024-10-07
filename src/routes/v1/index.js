@@ -6,7 +6,7 @@ const docsRoute = require('./docs.route');
 
 const router = express.Router();
 
-router.use('/auth', authRoute);
+router.use('/', authRoute);
 router.use('/users', userRoute);
 router.use('/roles', roleRoute);
 router.use('/docs', docsRoute);
